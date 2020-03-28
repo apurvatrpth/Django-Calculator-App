@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+<!DOCTYPE html>
+<html lang="en">
+{% block content %}
+<head>
+    <style>
+        body {
+                background-color: powderblue;
+                text-align: center;
+                border: 2px solid blue;
+                margin: 50px;
+                color: red;
+
+             }
+    </style>
+    <meta charset="UTF-8">
+    <title>Hello</title>
+
+    <h1>Hello, {{name}}</h1>
+
+</head>
+<body>
+<form action="add" method="post">
+    {% csrf_token %}
+    Enter 1st number: <input type="number" name="num1"><br>
+    <br>
+    Enter 2nd number: <input type="number" name="num2"><br>
+    <br>
+    Enter:
+
+    + : for Addition<br>
+    - : for Subtraction<br>
+    * : for Multiplication<br>
+    / : for Division<br>
+    <br>
+    Enter operation: <input type="text" name="operation"><br>
+    <br>
+    <input type="submit">
+
+</form>
+<br>
+{% endblock %}
+</body>
+</html>
